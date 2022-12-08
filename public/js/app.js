@@ -1,20 +1,3 @@
-// const { response } = require("express")
-
-//This is client side JS that needs to run into the browser 
-console.log('Client side javascript file is loaded!')
-
-//to make HTTP request from client side JavaScript we will use Fetch API
-//Fetch API
-//Fetch is not part of JavaScript. It is a browser based API which we can use in all modern browsers, but its
-//not accessible in nodeJS. The code we write here will not be usable in node backend script.
-
-// fetch('http://puzzle.mead.io/puzzle').then((response) => {
-//     response.json().then((data) => {
-//         console.log(data);
-//     }) 
-// })
-
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const messageOne = document.querySelector('#message-1');

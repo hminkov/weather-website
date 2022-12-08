@@ -48,12 +48,11 @@ app.get('/help',(req,res) => {
 app.get('/weather', (req, res) => {
     const address = req.query.address;
     if(!address) {
-        return res.send({ //by using return we are stopping the func execution
+        return res.send({ 
             error: "You must provide an address"
         })
     }
 
-    //geocode(address,(err, {{destructured data}} = {default object if no info is provided}) => )
     geocode(address, (err, {lat, long, location} = {}) => {
         if(err) return errorHandler(err, res);
         forecast(lat, long, (err, forecastData) => {
@@ -71,10 +70,10 @@ function errorHandler (err, res) {
         error: err
     });
 }
-// localhost:3000/products?search=games&rating=5
+
 app.get('/products', (req, res) => {
     if(!req.query.search) {
-        return res.send({ //by using return we are stopping the func execution
+        return res.send({
             error: "You must provide a search term"
         })
     }
@@ -101,11 +100,8 @@ app.get('*',(req,res) => {
         name: 'Hristo Minkov'
     })
 })
-//app.com
-//app.com/help
-//app.com/about
 
 //to start the server up we need to use the method .listen()
-app.listen(3003, () => {
-    console.log('Server is running on port 3003')
+app.listen(3000, () => {
+    console.log('Server is running on port 3000')
 });
